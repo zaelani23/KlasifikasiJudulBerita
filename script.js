@@ -27,6 +27,7 @@ function showPage() {
     document.getElementById("loaderlabel").style.display = "none";
     document.getElementById("loader").style.display = "none";       
     document.getElementById("mainAPP").style.display = "block";
+    document.getElementById('input').focus();
 }
 
 function detectWebGLContext () {
@@ -155,6 +156,8 @@ function onClick(){
           `Judul '${getInput()}' masuk kategori ${predictedLabel}`,
           'info'
         );
+
+        document.getElementById('input').value = "";
     } catch (e) {
         Swal.fire(
           'Error!',
