@@ -3,13 +3,15 @@ let input = document.querySelector('input');
 let button = document.querySelector('button');
 button.addEventListener('click', onClick);
 
+const currentDate = new Date();
+
 let isModelLoaded = false;
 let model;
 let word2index;
 
 // Parameter data preprocessing
-const maxlen = 17;
-const vocab_size = 2000;
+const maxlen = 14;
+const vocab_size = 4100;
 const padding = 'pre';
 const truncating = 'pre';
 
@@ -21,6 +23,7 @@ function myFunction() {
 }
 
 function showPage() {
+    document.getElementById("year").innerHTML = currentDate.getFullYear();
     document.getElementById("loaderlabel").style.display = "none";
     document.getElementById("loader").style.display = "none";       
     document.getElementById("mainAPP").style.display = "block";
